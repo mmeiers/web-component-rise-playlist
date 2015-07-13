@@ -1,11 +1,10 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 
-<dom-module id="demo-component">
+<dom-module id="rise-video">
   <template>
     <video  id="video1" data-autopause="false" data-mute="true" data-loop="true" data-fill-mode="fill" autoplay loop>
       <source src="{{src}}" type="video/webm">
     </video>
-    <!--<img src="{{src}}">-->
   </template>
 </dom-module>
 <video>
@@ -15,7 +14,7 @@
   /* global Polymer */
   /*jshint newcap: false */
   Polymer({
-    is: "demo-component",
+    is: "rise-video",
 
     properties: {
       src: String
