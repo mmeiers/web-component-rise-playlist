@@ -6,11 +6,11 @@
 
   <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
   <link rel="import" href="rise-playlist.html">
-  <link rel="import" href="demo-component.html">
+  <link rel="import" href="rise-video.html">
   <link rel="import" href="rise-storage.html">
 
   <style>
-    demo-component {
+    rise-video {
       position: absolute;
     }
 
@@ -26,7 +26,7 @@
   </style>
 </head>
 <body>
-  
+  <h1>Rise Storage</h1>
    <rise-storage id="sorting" companyId="395c64e5-2930-460b-881e-009aabb157df" folder="content-video-storage"
     sort="name" sortDirection="asc" ></rise-storage>
   
@@ -43,22 +43,23 @@
     <source src="" type="video/webm">
   </video>
   
+  <h1>Rise Playlist</h1>
   <rise-playlist intro="fade-in" outro="fade-out">
 
    <rise-playlist-item duration="5">
-       <demo-component id="apple" src="https://storage.googleapis.com/risemedialibrary-395c64e5-2930-460b-881e-009aabb157df/content-video-storage/video1.webm"></demo-component>
+       <rise-video id="video1" src="https://storage.googleapis.com/risemedialibrary-395c64e5-2930-460b-881e-009aabb157df/content-video-storage/video1.webm"></rise-video>
     </rise-playlist-item>
 	  
 	<rise-playlist-item duration="5">
-      <demo-component id="mat2" src="https://storage.googleapis.com/risemedialibrary-395c64e5-2930-460b-881e-009aabb157df/content-video-storage/video2.webm"></demo-component>
+      <rise-video id="video2" src="https://storage.googleapis.com/risemedialibrary-395c64e5-2930-460b-881e-009aabb157df/content-video-storage/video2.webm"></rise-video>
     </rise-playlist-item>
 
     <rise-playlist-item>
-       <demo-component id="duck" src="https://storage.googleapis.com/risemedialibrary-395c64e5-2930-460b-881e-009aabb157df/content-video-storage/video3.webm"></demo-component>
+       <rise-video id="video3" src="https://storage.googleapis.com/risemedialibrary-395c64e5-2930-460b-881e-009aabb157df/content-video-storage/video3.webm"></rise-video>
     </rise-playlist-item>
 	  
 	  <rise-playlist-item>
-      <demo-component id="mat" src="https://storage.googleapis.com/risemedialibrary-395c64e5-2930-460b-881e-009aabb157df/content-video-storage/video4.webm"></demo-component>
+      <rise-video id="video4" src="https://storage.googleapis.com/risemedialibrary-395c64e5-2930-460b-881e-009aabb157df/content-video-storage/video4.webm"></rise-video>
     </rise-playlist-item>
 
   </rise-playlist>
