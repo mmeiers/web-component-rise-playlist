@@ -7,6 +7,7 @@
   <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
   <link rel="import" href="rise-playlist.html">
   <link rel="import" href="demo-component.html">
+  <link rel="import" href="rise-storage.html">
 
   <style>
     demo-component {
@@ -25,24 +26,58 @@
   </style>
 </head>
 <body>
+  
+   <rise-storage id="sorting" companyId="395c64e5-2930-460b-881e-009aabb157df" folder="content-video-storage"
+    sort="name" sortDirection="asc" ></rise-storage>
+  
+   <video id="video1" data-autopause="false" data-mute="true" data-loop="true" data-fill-mode="fill" autoplay loop>
+    <source src="" type="video/webm">
+  </video>
+   <video id="video2" data-autopause="false" data-mute="true" data-loop="true" data-fill-mode="fill" autoplay loop>
+    <source src="" type="video/webm">
+  </video>
+  <video id="video3" data-autopause="false" data-mute="true" data-loop="true" data-fill-mode="fill" autoplay loop>
+    <source src="" type="video/webm">
+  </video>
+  <video id="video4" data-autopause="false" data-mute="true" data-loop="true" data-fill-mode="fill" autoplay loop>
+    <source src="" type="video/webm">
+  </video>
+  
   <rise-playlist intro="fade-in" outro="fade-out">
 
-    <rise-playlist-item duration="5">
-       <demo-component id="apple" src="https://goo.gl/XBnh0j"></demo-component>
+   <rise-playlist-item duration="5">
+       <demo-component id="apple" src="https://storage.googleapis.com/risemedialibrary-395c64e5-2930-460b-881e-009aabb157df/content-video-storage/video1.webm"></demo-component>
     </rise-playlist-item>
 	  
 	<rise-playlist-item duration="5">
-      <demo-component id="mat2" src="http://mmeiers.github.io/badforbananas/img/portrait2.png"></demo-component>
+      <demo-component id="mat2" src="https://storage.googleapis.com/risemedialibrary-395c64e5-2930-460b-881e-009aabb157df/content-video-storage/video2.webm"></demo-component>
     </rise-playlist-item>
 
     <rise-playlist-item>
-       <demo-component id="duck" src="https://goo.gl/fyZFTU"></demo-component>
+       <demo-component id="duck" src="https://storage.googleapis.com/risemedialibrary-395c64e5-2930-460b-881e-009aabb157df/content-video-storage/video3.webm"></demo-component>
     </rise-playlist-item>
 	  
 	  <rise-playlist-item>
-      <demo-component id="mat" src="http://mmeiers.github.io/badforbananas/img/portrait.png"></demo-component>
+      <demo-component id="mat" src="https://storage.googleapis.com/risemedialibrary-395c64e5-2930-460b-881e-009aabb157df/content-video-storage/video4.webm"></demo-component>
     </rise-playlist-item>
 
   </rise-playlist>
+  
+  <script>
+    var storage = document.querySelector("rise-storage"),  
+    video1 = document.querySelector("#video1");
+    video2 = document.querySelector("#video2");
+    video3 = document.querySelector("#video3");
+    video4 = document.querySelector("#video4");
+
+    storage.addEventListener("rise-storage-response", function(e) {
+    video1.setAttribute("src", e.detail.files[5].url);
+    video2.setAttribute("src", e.detail.files[6].url);
+    video3.setAttribute("src", e.detail.files[7].url);
+    video4.setAttribute("src", e.detail.files[8].url);
+
+    });
+  </script> 
+  
 </body>
 </html>

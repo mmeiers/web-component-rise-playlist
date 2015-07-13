@@ -1,11 +1,16 @@
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="bower_components/polymer/polymer.html">
 
 <dom-module id="demo-component">
   <template>
-    <img src="{{src}}">
+    <video  id="video1" data-autopause="false" data-mute="true" data-loop="true" data-fill-mode="fill" autoplay loop>
+      <source src="{{src}}" type="video/webm">
+    </video>
+    <!--<img src="{{src}}">-->
   </template>
 </dom-module>
-
+<video>
+    
+  </video>
 <script>
   /* global Polymer */
   /*jshint newcap: false */
